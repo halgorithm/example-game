@@ -12,6 +12,7 @@ function start() {
   const configWithScene = { ...config, scene: PlayScene };
   const exampleGame = new Game(configWithScene);
   window.exampleGame = exampleGame;
+  window.process = process;
 }
 
 export default start;
