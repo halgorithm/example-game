@@ -8,7 +8,15 @@ function loadAllAssets() {
     if (!modules[name].loadAssets) return;
 
     // console.log(`Loading assets for ${name}...`)
-    load.setPath(path.resolve(__dirname, 'src', 'exampleGame', name, 'assets'));
+    const moduleAssetsRoot = __dirname ? __dirname : '../';
+    const moduleAssetsPath = path.resolve(
+      moduleAssetsRoot,
+      'src',
+      'exampleGame',
+      name,
+      'assets'
+    );
+    load.setPath(moduleAssetsPath);
     modules[name].loadAssets(load);
     load.path = '';
   });

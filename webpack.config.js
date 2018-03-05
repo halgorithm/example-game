@@ -9,8 +9,7 @@ module.exports = {
   entry: './main.js',
 
   output: {
-    // path: path.resolve(__dirname, 'build'),
-    path: path.resolve(__dirname),
+    path: path.resolve(__dirname, 'build'),
     filename: 'example-game.bundle.js'
   },
 
