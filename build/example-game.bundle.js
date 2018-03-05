@@ -83748,7 +83748,12 @@ function loadAllAssets() {
   Object.keys(modules).forEach(function (name) {
     if (!modules[name].loadAssets) return; // console.log(`Loading assets for ${name}...`)
 
-    load.setPath(_path.default.resolve(__dirname, 'src', 'exampleGame', name, 'assets'));
+    console.log("dirname is ".concat(__dirname));
+    var moduleAssetsRoot =  true ? __dirname : 'example-game';
+
+    var moduleAssetsPath = _path.default.resolve(moduleAssetsRoot, 'src', 'exampleGame', name, 'assets');
+
+    load.setPath(moduleAssetsPath);
     modules[name].loadAssets(load);
     load.path = '';
   });

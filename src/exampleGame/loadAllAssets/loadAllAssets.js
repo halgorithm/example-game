@@ -8,6 +8,7 @@ function loadAllAssets() {
     if (!modules[name].loadAssets) return;
 
     // console.log(`Loading assets for ${name}...`)
+    console.log(`dirname is ${__dirname}`);
     const moduleAssetsRoot = __dirname ? __dirname : 'example-game';
     const moduleAssetsPath = path.resolve(
       moduleAssetsRoot,
